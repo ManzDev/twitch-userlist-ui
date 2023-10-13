@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style>
+    svg {
+      background: #111;
+      animation: pulse 1s alternate infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+  </style>
+  <g fill="#333">
+    <circle cx="12" cy="8" r="4" />
+    <ellipse cx="12" cy="16" rx="7" ry="4" />
+  </g>
+</svg>

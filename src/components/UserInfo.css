@@ -1,0 +1,99 @@
+:host {
+  --avatar-size: 70px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: var(--avatar-size) 1.25fr 0.4fr;
+  gap: 0 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+
+  &:hover {
+    background: #26262666;
+    cursor: pointer;
+
+    & .badge {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  display: grid;
+  place-items: end;
+  position: relative;
+
+  & .picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  :host([is-live]) & .dot.live {
+    --size: 10px;
+
+    width: var(--size);
+    height: var(--size);
+    background: lime;
+    border-radius: 50%;
+    position: absolute;
+    border: 2px solid #333;
+  }
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & .name {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #ddd;
+  }
+
+  & .username {
+
+  }
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  align-items: center;
+  justify-items: center;
+  justify-content: end;
+  gap: 0 1rem;
+
+  & .badge {
+    filter: grayscale(1);
+  }
+
+  & .message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & svg {
+    vertical-align: middle;
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 100%;
+  }
+
+  to {
+    opacity: 10%;
+  }
+}
+
+:host([loading]) {
+  animation: pulse 1s alternate infinite ease-in-out;
+}
