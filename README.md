@@ -1,5 +1,9 @@
 # UserList UI
 
+Interfaz de usuario para ver los usuarios que se han pasado por el chat de Twitch.
+
+![UserList UI](userlist-ui.png)
+
 ## Endpoints
 
 Ten en cuenta que los endpoints de backend no están incluidos en este repo.
@@ -10,11 +14,15 @@ Ten en cuenta que los endpoints de backend no están incluidos en este repo.
 {
   "manzdev": {
     /* userinfo */
-  }
+  },
+  "username2": {
+    /* userinfo */
+  },
+  /* ... */
 }
 ```
 
-- `/api/userinfo/:username` Devuelve información del usuario. Usado en `modules/getUserInfo.js`.
+- `/api/userinfo/:username` Devuelve la información del usuario. Usado en `modules/getUserInfo.js`.
 
 ```js
 {
@@ -31,6 +39,8 @@ Ten en cuenta que los endpoints de backend no están incluidos en este repo.
   "picture": "https://static-cdn.jtvnw.net/jtv_user_pictures/86bd7a3b-b42f-4463-a428-e3f8d0614208-profile_image-70x70.png",
 }
 ```
+
+- `/api/badge/:months` Redirige a la URL de la imagen del badge de suscriptor de twitch en el número de `months` indicado.
 
 ## Components
 

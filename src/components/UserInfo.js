@@ -5,6 +5,8 @@ import FriendlyBotIcon from "@/assets/icons/friendly-bot.svg?raw";
 import DEFAULT_AVATAR from "@/assets/icons/default-avatar.svg?inline";
 import { getUserInfo } from "@/modules/getUserInfo.js";
 
+const API_BADGE_URL = "http://localhost:9999/api/badge/";
+
 class UserInfo extends HTMLElement {
   constructor() {
     super();
@@ -72,7 +74,7 @@ class UserInfo extends HTMLElement {
 
   renderBadge() {
     if (this.monthsSub > 0) {
-      return /* html */`<img src="http://localhost:9999/api/badge/${this.monthsSub}" alt="Badge" title="${this.monthsSub} mes(es)">`;
+      return /* html */`<img src="${API_BADGE_URL + this.monthsSub}" alt="Badge" title="${this.monthsSub} mes(es)">`;
     }
     return "";
   }
